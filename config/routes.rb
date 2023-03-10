@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :courses
+  get '/new_courses', to: 'courses#new_courses'
   # config/routes.rb
   namespace :api do
     namespace :v1 do
