@@ -9,6 +9,15 @@ class Api::V1::UsersController < ApplicationController
             render json: {error: user.errors.full_messages} , status: :not_acceptable 
         end
     end
+
+    def update
+        user = User.find(params[:id])
+        user.update({profile_picture: params[:profile_picture]})
+        render json: user
+    end
+    
+
+
     def profile
         render json: { user: UserSerializer.new(current_user) }, status: :accepted
     end
