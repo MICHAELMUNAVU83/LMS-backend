@@ -1,5 +1,5 @@
 class Api::V1::UsersController < ApplicationController
-    skip_before_action :authorized, only: [:create]
+    skip_before_action :authorized, only: [:create, :update]
     def create
         user = User.new(user_params)
         if user.save
@@ -15,7 +15,7 @@ class Api::V1::UsersController < ApplicationController
         user.update({profile_picture: params[:profile_picture]})
         render json: user
     end
-    
+
 
 
     def profile
