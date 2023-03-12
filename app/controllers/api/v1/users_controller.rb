@@ -1,5 +1,5 @@
 class Api::V1::UsersController < ApplicationController
-    skip_before_action :authorized, only: [:create, :update, :active_users]
+    skip_before_action :authorized, only: [:create, :update, :available_users]
     def create
         user = User.new(user_params)
         if user.save
@@ -16,7 +16,7 @@ class Api::V1::UsersController < ApplicationController
         render json: user
     end
 
-    def active_users 
+    def available_users
         users = User.where.not(id: params[:id])
         render json: users
     end
