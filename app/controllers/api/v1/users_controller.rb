@@ -12,8 +12,13 @@ class Api::V1::UsersController < ApplicationController
 
     def update
         user = User.find(params[:id])
-        user.update({profile_picture: params[:profile_picture]})
+        user.update(params.require(:user).permit(:profile_picture))
         render json: user
+    end
+
+    def active_users 
+        users = User.where.not(id: params[:id])
+        render json: users
     end
 
 

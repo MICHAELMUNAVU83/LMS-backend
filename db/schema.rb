@@ -10,13 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_10_033842) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_12_062734) do
   create_table "courses", force: :cascade do |t|
     t.string "name"
     t.string "cover_photo"
     t.string "start_date"
     t.string "level"
     t.integer "lessons"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.string "text"
+    t.integer "sender_id"
+    t.integer "receiver_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
