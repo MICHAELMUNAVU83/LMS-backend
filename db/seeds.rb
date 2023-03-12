@@ -27,3 +27,51 @@ courses = Course.create([
 
 
 ]   )
+
+
+users = User.create([
+{
+    first_name: "John",
+    last_name: "Doe",
+    email: "johndoe@gmail.com",
+    password: "123456",
+    role: "student",
+    password_confirmation: "123456",
+    profile_picture: "pic",
+
+
+},
+{
+    first_name: "Jane",
+    last_name: "Doe",
+    email: "janedoe@gmail.com",
+    password: "123456",
+    role: "student",
+    password_confirmation: "123456",
+    profile_picture: "pic",
+    
+
+},
+{
+    first_name: "Michael",
+    last_name: "Doe",
+    email: "michaeldoe@gmail.com",
+    password: "123456",
+    role: "student",
+    password_confirmation: "123456",
+    profile_picture: "pic",
+    
+
+},
+{
+    first_name: "Kimutai",
+    last_name: "Doe",
+    email: "kimutaidoe@gmail.com",
+    password: "123456",
+    role: "student",
+    password_confirmation: "123456",
+    profile_picture: "pic",
+    
+
+}
+])

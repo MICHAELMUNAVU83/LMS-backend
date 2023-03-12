@@ -1,5 +1,5 @@
 class Api::V1::UsersController < ApplicationController
-    skip_before_action :authorized, only: [:create, :update]
+    skip_before_action :authorized, only: [:create, :update, :active_users]
     def create
         user = User.new(user_params)
         if user.save
